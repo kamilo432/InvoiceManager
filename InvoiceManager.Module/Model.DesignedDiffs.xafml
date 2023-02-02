@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="InvoiceManager">
+  <BOModel>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser" Caption="Base User" />
+    <Class Name="InvoiceManager.Module.BusinessObjects.Company" ImageName="BO_Customer" />
+    <Class Name="InvoiceManager.Module.BusinessObjects.Goods" ImageName="BO_Product" />
+    <Class Name="InvoiceManager.Module.BusinessObjects.Invoice" ImageName="BO_Invoice" />
+    <Class Name="InvoiceManager.Module.BusinessObjects.InvoicePosition" ImageName="BO_Sale_Item">
+      <OwnMembers>
+        <Member Name="Quantity" DisplayFormat="{0:N2}" EditMask="N2" />
+      </OwnMembers>
+    </Class>
+    <Class Name="InvoiceManager.Module.BusinessObjects.VatRate" ImageName="BO_Opportunity">
+      <OwnMembers>
+        <Member Name="Value" EditMask="N2" DisplayFormat="{0:N2}" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="22.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="22.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="22.2.3.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="ApplicationUser_ListView" Caption="Users" />
+    <DetailView Id="Company_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Company" RelativeSize="24.126455906821963">
+              <LayoutGroup Id="Company_col1" RelativeSize="50">
+                <LayoutItem Id="CompanyName" RelativeSize="28.571428571428573" />
+                <LayoutItem Id="NIP" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="Regon" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="PhoneNumber" RelativeSize="28.571428571428573" />
+              </LayoutGroup>
+              <LayoutGroup Id="Company_col2" RelativeSize="50">
+                <LayoutItem Id="Email" RelativeSize="28.571428571428573" />
+                <LayoutItem Id="PostalCode" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="City" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="Street" RelativeSize="28.571428571428573" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" Caption="Oid" RelativeSize="75.87354409317804">
+              <LayoutItem Id="Oid" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Goods_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Goods" RelativeSize="16.305916305916305">
+              <LayoutItem Id="EAN" RelativeSize="30.088495575221238" />
+              <LayoutItem Id="Name" RelativeSize="21.238938053097346" />
+              <LayoutItem Id="UnitPrice" RelativeSize="21.238938053097346" />
+              <LayoutItem Id="VatRate" RelativeSize="27.43362831858407" />
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" Caption="Oid" RelativeSize="83.69408369408369">
+              <LayoutItem Id="Oid" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Invoice_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="30.158730158730158">
+            <LayoutGroup Id="Invoice" RelativeSize="72.2488038277512">
+              <LayoutGroup Id="Invoice_col1" RelativeSize="50">
+                <LayoutItem Id="InvoiceNumber" RelativeSize="29.310344827586206" />
+                <LayoutItem Id="Company" RelativeSize="20.689655172413794" />
+                <LayoutItem Id="InvoiceDate" RelativeSize="20.689655172413794" />
+                <LayoutItem Id="SaleDate" RelativeSize="29.310344827586206" />
+              </LayoutGroup>
+              <LayoutGroup Id="Invoice_col2" RelativeSize="50">
+                <LayoutItem Id="PaymentTerm" RelativeSize="29.310344827586206" />
+                <LayoutItem Id="GrossValue" RelativeSize="20.689655172413794" />
+                <LayoutItem Id="NetValue" RelativeSize="20.689655172413794" />
+                <LayoutItem Id="VatValue" RelativeSize="29.310344827586206" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" RelativeSize="27.751196172248804" Caption="Oid">
+              <LayoutItem Id="Oid" ShowCaption="False" RelativeSize="100" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="InvoicePositions_Group" Direction="Vertical" RelativeSize="69.84126984126983">
+            <LayoutItem Id="InvoicePositions" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="InvoicePosition_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="InvoicePosition" RelativeSize="18.326118326118326">
+              <LayoutGroup Id="InvoicePosition_col1" RelativeSize="50">
+                <LayoutItem Id="Goods" RelativeSize="36.95652173913044" />
+                <LayoutItem Id="UnitPrice" RelativeSize="26.08695652173913" />
+                <LayoutItem Id="Quantity" RelativeSize="36.95652173913044" />
+              </LayoutGroup>
+              <LayoutGroup Id="InvoicePosition_col2" RelativeSize="50">
+                <LayoutItem Id="GrossValue" RelativeSize="36.95652173913044" />
+                <LayoutItem Id="NetValue" RelativeSize="26.08695652173913" />
+                <LayoutItem Id="VatValue" RelativeSize="36.95652173913044" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" RelativeSize="81.67388167388168" Caption="Oid">
+              <LayoutItem Id="Oid" ShowCaption="False" RelativeSize="100" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="VatRate_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="VatRate" RelativeSize="9.37950937950938">
+              <LayoutItem Id="Symbol" RelativeSize="52.30769230769231" />
+              <LayoutItem Id="Value" RelativeSize="47.69230769230769" />
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" RelativeSize="90.62049062049061" Caption="Oid">
+              <LayoutItem Id="Oid" ShowCaption="False" RelativeSize="100" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

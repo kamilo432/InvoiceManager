@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <CheckEolTargetFramework>false</CheckEolTargetFramework>
+    <Deterministic>false</Deterministic>
+    <AssemblyVersion>1.0.*</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Configurations>Debug;Release;EasyTest</Configurations>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Model.DesignedDiffs.xafml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DevExpress.ExpressApp" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.AuditTrail.Xpo" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.Chart" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.CloneObject.Xpo" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.ConditionalAppearance" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.Dashboards" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.Kpi" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.Notifications" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.Objects" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.Office" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.ReportsV2" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.Scheduler" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.ScriptRecorder" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.Security.Xpo" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.TreeListEditors" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.Validation" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.ViewVariantsModule" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.Xpo" Version="22.2.3" />
+    <PackageReference Include="DevExpress.Persistent.Base" Version="22.2.3" />
+    <PackageReference Include="DevExpress.Persistent.BaseImpl.Xpo" Version="22.2.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+</Project>
